@@ -2,7 +2,7 @@ NAME = ft_ls
 
 SRCS_DIR = ./srcs
 
-SRCS = $(SRCS_DIR)/main.c $(SRCS_DIR)/arg-checker.c $(SRCS_DIR)/handler.c
+SRCS = $(SRCS_DIR)/main.c $(SRCS_DIR)/arg-checker.c $(SRCS_DIR)/handler.c $(SRCS_DIR)/display.c
 
 OBJS = $(SRCS:.c=.o)
 

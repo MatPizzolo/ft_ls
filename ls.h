@@ -40,5 +40,7 @@ t_main *init_check_args(int argc, char **argv);
 /* Handler */
 void ft_ls(t_main *main);
 
+/* Display */
+void print_dir_info(t_main *main);
 
 #endif
