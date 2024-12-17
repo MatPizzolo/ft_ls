@@ -27,7 +27,9 @@ int main (int argc, char **argv){
 	
 	ft_ls(main);
 
-	print_dir_info(main);
+	sort_files(main);
+
+	display_info(main);
 
 	free_main(main);
 	return 0;

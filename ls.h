@@ -24,6 +24,7 @@
 
 typedef struct s_dir_info {
 	char *dir_path;			// Directory path
+	uint nbr_files;
 	struct dirent **files;	// Array of pointers to dirent structs
 } t_dir_info;
 
@@ -41,7 +42,11 @@ t_main *init_check_args(int argc, char **argv);
 /* Handler */
 void ft_ls(t_main *main);
 
+/* Sort */
+void sort_files(t_main *main);
+
 /* Display */
+void display_info(t_main *main);
 void print_dir_info(t_main *main);
 
 #endif

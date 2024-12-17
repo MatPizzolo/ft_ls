@@ -49,6 +49,7 @@ void ft_ls(t_main *main) {
             }
         }
         main->dirs[i].files[j] = NULL;
+        main->dirs[i].nbr_files = j - 1;
     }
     closedir(dir);
 }
