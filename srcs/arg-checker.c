@@ -20,6 +20,8 @@ void check_flags(char* str, t_main *main) {
 	char *flags_str;
 	int i;
 
+	// Also check if str is not a file or dir
+	// str could be a file called -dir or -ls
     if (str[0] == '-') { 
         flags_str = str + 1;
         for (i = 0; flags_str[i] != '\0'; i++) {
