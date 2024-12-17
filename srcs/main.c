@@ -16,6 +16,7 @@ void free_main(t_main *main) {
 	}
 
 	free(main->dirs);
+	free(main->flags);
 	free(main);
 }
 

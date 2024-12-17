@@ -30,7 +30,8 @@ typedef struct s_dir_info {
 typedef struct s_main {
 	t_dir_info		*dirs; // Array of directory information structs
 	int				nbr_dirs;
-	int 			flag;
+	int 			*flags;
+	int				nbr_flags;
 } t_main;
 
 
