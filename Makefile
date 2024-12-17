@@ -2,22 +2,22 @@ NAME = ft_ls
 
 SRCS_DIR = ./srcs
 
-SRCS = $(SRCS_DIR)/main.c
+SRCS = $(SRCS_DIR)/main.c $(SRCS_DIR)/arg-checker.c $(SRCS_DIR)/handler.c
 
 OBJS = $(SRCS:.c=.o)
 
-CC = gcc 
-CFLAGS = -Wall -Wextra -Werror -g  -I libft/
+CC = gcc
+CFLAGS = -Wall -Wextra -g -I libft #-Werror
 
 libft:
 	make -C libft
 
-all: $(NAME)
+all: libft $(NAME)
 
-$(NAME): $(OBJS) libft
-	$(CC) $(CFLAGS) $(OBJS) -o $(NAME) 
+$(NAME): $(OBJS) ./libft/libft.a 
+	$(CC) $(CFLAGS) $(OBJS) -L libft -lft -o $(NAME)
 
-%.o: %.c 
+%.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
@@ -25,7 +25,8 @@ clean:
 	rm -f $(OBJS)
 
 fclean: clean
-	rm -rf $(NAME) libft/libft.a
+	rm -f $(NAME)
+	make fclean -C libft/
 
 re: fclean all
 
